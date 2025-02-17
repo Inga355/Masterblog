@@ -12,8 +12,15 @@
         "content": "This is another post."
     },
     {
+        "id": 3,
         "author": "Henry",
-        "title": "htrhrs",
+        "title": "kopjpo",
         "content": "Alles \u00fcber Henry"
+    },
+    {
+        "id": 4,
+        "author": "gsgr",
+        "title": "op",
+        "content": "grsge"
     }
 ]

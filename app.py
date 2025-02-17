@@ -48,19 +48,12 @@ def delete(post_id):
     return redirect(url_for('index'))
 
 
-"""@app.route('/update/<int:post_id>')
+@app.route('/update/<int:post_id>', methods=['GET', 'POST'])
 def update(post_id):
     with open('data.json', 'r') as json_file:
         blog_posts = json.load(json_file)
-    for post in blog_posts:
-        if post.get('id') == post_id:
-            
-    blog_posts = [post for post in blog_posts if post.get('id') != post_id]
-    with open('data.json', 'w') as f:
-        json.dump(blog_posts, f, indent=4)
 
-    return redirect(url_for('index'))"""
-
+    return render_template('update.html', post=blog_posts)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

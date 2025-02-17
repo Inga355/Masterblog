@@ -18,8 +18,8 @@ def add():
         blog_posts = json.load(json_file)
         highest_id = 0
         for post in blog_posts:
-            if post['id'] > highest_id:
-                highest_id = post['id']
+            if 'id' in post and post.get('id') > highest_id:
+                highest_id = post.get('id')
         if request.method == 'POST':
             new_author = request.form['author']
             new_title = request.form['title']
@@ -35,6 +35,17 @@ def add():
                 json.dump(blog_posts, f, indent=4)
             return redirect(url_for('index'))
         return render_template('add.html')
+
+
+@app.route('/delete/<int:post_id>', methods=['GET', 'POST'])
+def delete(post_id):
+    with open('data.json', 'r') as json_file:
+        blog_posts = json.load(json_file)
+    blog_posts = [post for post in blog_posts if post.get('id') != post_id]
+    with open('data.json', 'w') as f:
+        json.dump(blog_posts, f, indent=4)
+
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

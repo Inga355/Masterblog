@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <form method="POST" action="/add">
+    <form method="POST" action="/update/{{ post.id }}">
         <h2>Update your Post</h2>
-        {% for content in post %}
-        <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author" value="{{ content.author }}"><br>
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" value="{{ content.title }}"><br>
-        <label for="content">Content:</label><br>
-        <input type="text" id="content" name="content" value="{{ content.content }}"><br>
-        <input type="submit" value="Submit">
-        {% endfor %}
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author" value="{{ post.author }}"><br>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" value="{{ post.title }}"><br>
+            <label for="content">Content:</label><br>
+            <input type="text" id="content" name="content" value="{{ post.content }}"><br>
+            <input type="submit" value="Submit">
     </form>
 </body>
 </html>

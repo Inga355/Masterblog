@@ -13,7 +13,7 @@
     <div class="post">
         <h2>{{ value["title"] }}</h2>
         <p><em>Written by {{ value["author"] }}</em></p>
-        <p>{{ value["content"] }}</p><a href="/delete/{{ value['id'] }}" id="delete_button">DELETE</a>
+        <p>{{ value["content"] }}</p><a href="/delete/{{ value['id'] }}" id="delete_button">DELETE</a><a href="/update/{{ value['id'] }}" id="update_button">UPDATE</a>
     </div>
     {% endfor %}
 </body>

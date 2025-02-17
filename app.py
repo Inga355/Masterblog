@@ -37,7 +37,7 @@ def add():
         return render_template('add.html')
 
 
-@app.route('/delete/<int:post_id>', methods=['GET', 'POST'])
+@app.route('/delete/<int:post_id>')
 def delete(post_id):
     with open('data.json', 'r') as json_file:
         blog_posts = json.load(json_file)
@@ -46,6 +46,20 @@ def delete(post_id):
         json.dump(blog_posts, f, indent=4)
 
     return redirect(url_for('index'))
+
+
+"""@app.route('/update/<int:post_id>')
+def update(post_id):
+    with open('data.json', 'r') as json_file:
+        blog_posts = json.load(json_file)
+    for post in blog_posts:
+        if post.get('id') == post_id:
+            
+    blog_posts = [post for post in blog_posts if post.get('id') != post_id]
+    with open('data.json', 'w') as f:
+        json.dump(blog_posts, f, indent=4)
+
+    return redirect(url_for('index'))"""
 
 
 if __name__ == '__main__':

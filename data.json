@@ -12,20 +12,20 @@
         "content": "This is another post."
     },
     {
-        "id": 3,
-        "author": "hen",
-        "title": "First Post",
-        "content": "This is my first post."
-    },
-    {
         "id": 4,
         "author": "Henry",
         "title": "First Post",
         "content": "This is my first post."
     },
     {
+        "id": 3,
+        "author": "6666666",
+        "title": "First Post",
+        "content": "This is my first post."
+    },
+    {
         "id": 5,
-        "author": "55555",
+        "author": "44444",
         "title": "First Post",
         "content": "This is my first post."
     }

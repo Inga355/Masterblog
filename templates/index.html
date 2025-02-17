@@ -8,20 +8,12 @@
 </head>
 <body>
     <h1>Welcome to My Flask Blog!</h1>
+    {% for value in post %}
     <div class="post">
-        <h2>Post Title</h2>
-        <p><em>Written by ...</em></p>
-        <p>Post content</p>
+        <h2>{{ value["title"] }}</h2>
+        <p><em>Written by {{ value["author"] }}</em></p>
+        <p>{{ value["content"] }}</p>
     </div>
-    <div class="post">
-        <h2>Post Title</h2>
-        <p><em>Written by ...</em></p>
-        <p>Post content</p>
-    </div>
-    <div class="post">
-        <h2>Post Title</h2>
-        <p><em>Written by ...</em></p>
-        <p>Post content</p>
-    </div>
+    {% endfor %}
 </body>
 </html>
